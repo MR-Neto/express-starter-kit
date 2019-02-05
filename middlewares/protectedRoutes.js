@@ -1,0 +1,11 @@
+
+const protectedRoutes = (req, res, next) => {
+
+  if (req.session.currentUser) {
+    res.redirect("/users/profile");
+  } else {
+    next ();
+  }
+};
+
+module.exports = protectedRoutes;
